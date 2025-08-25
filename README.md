@@ -1,6 +1,6 @@
 # Code Token Counter
 
-[![PyPI version](https://badge.fury.io/py/code-token-counter.svg)](https://badge.fury.io/py/codebase-token-counter)
+[![PyPI version](https://badge.fury.io/py/code-token-counter.svg)](https://badge.fury.io/py/code-token-counter)
 [![Test](https://github.com/Xytronix/codebase-token-counter/actions/workflows/ci.yml/badge.svg)](https://github.com/Xytronix/codebase-token-counter/actions/workflows/ci.yml)
 
 A comprehensive tool for analyzing codebases to understand their token usage and compatibility with various Large Language Models (LLMs). This tool helps developers understand if their code can fit within different LLM context windows, how tokens are distributed across technologies, and provides detailed optimization strategies.
