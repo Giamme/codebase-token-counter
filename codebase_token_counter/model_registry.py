@@ -2,7 +2,7 @@
 
 import json
 from dataclasses import dataclass
-from importlib import resources
+from pathlib import Path
 from typing import List
 
 
@@ -30,9 +30,10 @@ class ModelRecord:
 
 def load_model_registry() -> List[ModelRecord]:
     """Return validated model records from the package's bundled JSON file."""
-    with resources.open_text(
-        "codebase_token_counter", "model_registry.json", encoding="utf-8"
-    ) as registry_file:
+    # Resolve next to this file rather than by package name, so the registry
+    # loads when token_counter.py is run as a plain script.
+    registry_path = Path(__file__).with_name("model_registry.json")
+    with registry_path.open(encoding="utf-8") as registry_file:
         payload = json.load(registry_file)
 
     raw_models = payload.get("models") if isinstance(payload, dict) else None
